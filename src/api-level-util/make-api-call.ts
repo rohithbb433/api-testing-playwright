@@ -3,12 +3,13 @@ import { APIRequestContext, APIResponse, Page } from '@playwright/test';
 export default class RequestAPI {
     private request: APIRequestContext;
 
-    constructor(page: Page) {
-        this.request = page.request;
+    constructor(request: APIRequestContext) {
+        this.request = request;
     }
 
 
     public async getAPICall(url: string, headers: { [key: string]: string }): Promise<APIResponse> {
+        console.log()
         return await this.request.get(url, {
             headers: headers
         })
