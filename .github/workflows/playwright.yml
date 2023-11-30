@@ -13,6 +13,8 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm ci
+    - name: Print Name
+      run: echo "Name ${{ github.event.inputs.Name }}"
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
